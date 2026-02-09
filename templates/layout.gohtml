@@ -1,0 +1,12 @@
+{{define "layout"}}
+{{template "header" .}}
+    <h1>Name: {{.Name}}</h1>
+{{template "footer"}}
+{{end}}
+
+{{/* we can define multiple layouts */}}
+{{define "test"}}
+{{template "header" .}}
+    <h1>Test Layout for: {{.Name}}</h1>
+{{template "footer"}}
+{{end}}
