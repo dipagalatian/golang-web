@@ -1,7 +1,6 @@
 package golangweb
 
 import (
-	"embed"
 	"fmt"
 	"html/template"
 	"io"
@@ -108,8 +107,7 @@ func TestCreateTemplateDirectory(t *testing.T) {
 
 // CREATE TEMPLATE FROM DIR USING GO EMBED
 
-//go:embed templates/*.gohtml
-var templates embed.FS
+// embed declaration is moved to template_caching_test.go
 
 func CreateTemplateFromDirWithEmbed(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFS(templates, "templates/*.gohtml"))
